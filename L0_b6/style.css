@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    margin: 0 auto;
+    width: 80%;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.UI_Design,
+.Web_Development,
+.Branding,
+.Photography,
+.Apps_Development,
+.Digital_Marketing {
+    text-align: center;
+    margin: 12px;
+    background-color: #b1b1b1;
+    height: 150px;
+    width: 300px;
+    position: relative;
+}
+
+.tron {
+    top: 5%;
+    right: 42%;
+    position: absolute;
+    border: 1px solid rgb(0, 255, 204);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+i {
+    color: rgb(0, 221, 255);
+    margin-top: 24px;
+    z-index: 1;
+}
+
+h3 {
+    margin-top: 32px;
+}
+
+p {
+    margin-top: 12px;
+    margin: 4px;
+    opacity: 0.7;
+}

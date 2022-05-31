@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    margin: 0 auto;
+    width: 850px;
+    margin-top: 12px;
+}
+
+.title {
+    font-size: 24px;
+}
+
+h1 {
+    padding: 12px;
+    margin-top: 12px;
+    font-weight: 100;
+}
+
+.content {
+    background-color: #b1b1b1;
+    margin: 8px;
+    width: 100%;
+    padding: 12px;
+}
+
+h4 {
+    font-size: 24px;
+}
+
+b {
+    color: green;
+}
+
+p {
+    font-size: 16px;
+    margin-top: 12px;
+}
+
+.content-name {
+    display: flex;
+    justify-content: space-between;
+}

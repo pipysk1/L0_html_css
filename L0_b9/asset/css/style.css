@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 24px;
+    display: flex;
+    text-align: center;
+}
+
+.img {
+    width: 100px;
+    height: 100px;
+}
+
+.tab {
+    margin-top: 24px;
+    padding: 24px;
+}
+
+p {
+    margin-top: 32px;
+    font-style: italic;
+    font-size: 18px;
+    opacity: 0.6;
+}

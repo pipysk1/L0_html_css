@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="main.js"></script> -->
+</head>
+
+<body>
+    <div id="main">
+        <div class="login_service">
+            <button class="btn js-buy-ticket">Đăng nhập hệ thống</button>
+        </div>
+    </div>
+    <div class="modal js-modal">
+        <div class="model-container js-modal-container">
+            <div class="modal-close js-modal-close">
+                <i class="ti-close"></i>
+            </div>
+            <header class="modal-header">
+                <i class="modal-heading-icon ti-bag"></i> Login
+            </header>
+            <div class="form">
+                <div class="form-group">
+                    <input class="form-control" id="username" placeholder="Username" name="username" type="text" autofocus />
+                    <span id="message-username" class="form-message message-username"></span>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" id="password" placeholder="Password" name="password" type="password" value="" />
+                    <span id="message-password" class="form-message message-password"></span>
+                </div>
+                <button class="form-submit btn-loading">Đăng nhập</button>
+                <!-- </form> -->
+            </div>
+            <footer class="modal-footer">
+                <p class="modal-help">Forget Password???</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Change Password -->
+    <div class="modal js-modal-password">
+        <div class="model-container js-modal-container">
+            <div class="modal-close js-modal-close">
+                <i class="ti-close"></i>
+            </div>
+            <header class="modal-header">
+                <i class="modal-heading-icon ti-bag"></i> Change Password
+            </header>
+            <div class="form">
+                <div class="form-group">
+                    <input class="form-control" id="password_new" placeholder="Password" name="password" type="password" />
+                    <span id="message-password-new" class="form-message message-username"></span>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" id="re-password-new" placeholder="Re-Password" name="re-password" type="password" value="" />
+                    <span id="message-re-password-new" class="form-message message-password"></span>
+                </div>
+                <button class="form-submit btn-change-password">Đổi mật khẩu</button>
+                <!-- </form> -->
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+        const btnService = document.querySelector('.js-buy-ticket');
+        const modal = document.querySelector('.js-modal');
+        const btnChangePassword = document.querySelector('.modal-help');
+        const modal_pass = document.querySelector('.js-modal-password');
+        const modalContainer = document.querySelector('.js-modal-container')
+
+
+        function showModal() {
+            modal.classList.add('open');
+        }
+
+        function showModalPass() {
+            modal_pass.classList.add('open')
+        }
+
+        function hideModalPass() {
+            modal_pass.classList.remove('open')
+        }
+
+        function hideModal() {
+            modal.classList.remove('open')
+        }
+        modal.addEventListener('click', hideModal);
+        modal_pass.addEventListener('click', hideModalPass);
+
+        modalContainer.addEventListener('click', (event) => {
+            event.stopPropagation()
+        })
+        btnService.addEventListener('click', showModal);
+        btnChangePassword.addEventListener('click', showModalPass);
+        var passOld = "admin"
+
+        function validator() {
+
+            var btnSubmit = document.querySelector('.form-submit');
+            btnSubmit.onclick = function(e) {
+
+
+
+                var color_message_password = document.getElementById('message-password').style.color = "red";
+
+                var user = document.getElementById('username').value;
+                var pass = document.getElementById('password').value;
+                if (user.trim().length == 0) {
+                    document.getElementById('message-username').innerHTML = "Vui lòng nhập tài khoản";
+                    return false;
+                }
+                if (pass.trim().length == 0) {
+                    document.getElementById('message-password').innerHTML = "Vui lòng nhập mật khẩu";
+                    return false;
+                }
+                if (user !== "admin" && user != null) {
+                    document.getElementById('message-username').innerHTML = "Sai tài khoản";
+                    return false;
+                }
+                if (pass !== passOld && user != null) {
+                    document.getElementById('message-password').innerHTML = "Sai tài mật khẩu";
+                    return false;
+                } else {
+                    document.querySelector('#message-password').innerHTML = ""
+                }
+                if (true) {
+                    btnSubmit.innerHTML = "Loading...."
+                    setTimeout(function() {
+                        hideModal()
+                        btnService.innerHTML = "Đăng nhập thành công"
+                    }, 2000);
+                }
+            }
+        }
+        validator();
+
+        function changePassword() {
+            var btnChange = document.querySelector('.btn-change-password');
+            btnChange.onclick = function() {
+                var passnew = document.getElementById('password_new').value;
+                var re_passnew = document.getElementById('re-password-new').value;
+                if (passnew.trim().length == 0) {
+                    document.getElementById('message-password-new').innerHTML = "Vui lòng nhập mật khẩu";
+                    return false
+                }
+                if (re_passnew.trim().length == 0) {
+                    document.getElementById('message-re-password-new').innerHTML = "Vui lòng nhập mật khẩu";
+                    return false
+                }
+                if (passnew != re_passnew) {
+                    document.getElementById('message-re-password-new').innerHTML = "Mật khẩu nhập lại sai";
+
+                }
+                if (passnew == re_passnew && passnew != null && re_passnew != null) {
+                    document.getElementById('message-re-password-new').innerHTML = "Đổi mật khẩu thành công";
+                    document.getElementById('message-re-password-new').style.color = "blue";
+                    btnChange.innerHTML = "Loading..."
+                    setTimeout(function() {
+                        passOld = re_passnew;
+                        hideModalPass();
+                    }, 2000)
+                }
+                console.log(passnew)
+            }
+
+        }
+        changePassword();
+    </script>
+</body>
+
+</html>
