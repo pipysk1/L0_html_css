@@ -5,38 +5,43 @@
 }
 
 .main {
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0 auto;
     width: 850px;
     margin-top: 12px;
 }
 
 .title {
-    font-size: 24px;
+    font-size: 18px;
 }
 
 h1 {
+    font-family: 'Times New Roman', Times, serif;
     padding: 12px;
     margin-top: 12px;
-    font-weight: 100;
+    font-weight: inherit;
+    text-transform: uppercase;
 }
 
 .content {
-    background-color: #b1b1b1;
+    background-color: #F4F4F4;
     margin: 8px;
     width: 100%;
     padding: 12px;
 }
 
 h4 {
-    font-size: 24px;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 b {
-    color: green;
+    color: #A4B91F;
 }
 
 p {
-    font-size: 16px;
+    opacity: 0.6;
+    font-size: 12px;
     margin-top: 12px;
 }
 

@@ -15,69 +15,69 @@ body {
 }
 
 .main {
-    margin-top: 12px;
     text-align: center;
 }
 
-.email {
-    margin-top: 32px;
+.main .email {}
+
+.email__circle {
     position: relative;
+    margin: 32px auto;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #339999;
     border-radius: 50%;
-    margin: 0 auto;
-    height: 100px;
-    width: 100px;
-    border: 3px solid #A2DBE0;
 }
 
-.ti-email {
-    top: 32%;
-    right: 32%;
-    color: #A2DBE0;
-    font-size: 32px;
+.email__circle i {
+    color: #339999;
     position: absolute;
-}
-
-.top {
-    margin-top: 40px;
-    font-size: 32px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .content {
-    margin-top: 32px;
-    font-size: 16px;
-    opacity: 0.7;
+    margin-top: -14px;
+    margin-bottom: 12px;
+}
+
+.content__title {
+    font-weight: initial;
+    font-size: 28px;
+}
+
+p {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-top: 4px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.footer {
-    margin-top: 32px;
+.input {
+    display: flex;
+    flex-direction: column;
 }
 
-.input-email {
-    opacity: 0.8;
-    font-weight: bold;
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid #FFF;
+.input__email {
     width: 300px;
-    height: 52px;
-}
-
-.btn-request {
-    padding: 0 12px;
-    min-width: 150px;
-    margin-top: 12px;
-    height: 52px;
-    color: white;
-    font-weight: bold;
-    font-size: 14px;
-    text-transform: uppercase;
+    height: 42px;
+    box-sizing: border-box;
+    padding: 0px 8px;
+    margin: 6px auto;
+    border: 1px solid white;
+    opacity: 0.8;
     border-radius: 4px;
-    border: 1px solid rgb(1, 199, 199);
-    background-color: rgb(2, 169, 169);
 }
 
-.btn-request:hover {
-    background-color: white;
-    color: aqua;
+.input__btn {
+    height: 46px;
+    border-radius: 4px;
+    width: 170px;
+    color: white;
+    border: 1px solid #70CBCE;
+    margin: 12px auto;
+    background-color: #70CBCE;
+    text-transform: uppercase;
+    line-height: 1.6;
 }

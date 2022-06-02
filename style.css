@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    margin: 24px;
+}
+
+.main ul li {
+    list-style: none;
+}
+
+.main ul li a {
+    text-decoration: none;
+    font-size: 24px;
+}
