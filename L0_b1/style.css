@@ -14,13 +14,13 @@
     margin: 0 auto;
     height: 46px;
     width: 150px;
-    background-color: blue;
+    background-color: #8598cc;
 }
 
 .top {
     text-align: center;
     color: white;
-    font-size: 24px;
+    font-size: 22px;
 }
 
 .content {
@@ -37,11 +37,12 @@ h2 {
 }
 
 b {
-    color: green;
+    color: #51C8F4;
 }
 
 .content_header {
-    margin-top: 12px;
+    margin-top: 32px;
+    opacity: 0.6;
 }
 
 .footer {
@@ -53,7 +54,7 @@ b {
     border-radius: 4px;
     border: 1px;
     color: white;
-    background-color: black;
+    background-color: #2d3032;
     margin: 10px;
     padding: 12px;
     height: 46px;
@@ -62,6 +63,6 @@ b {
 }
 
 .btn-footer:hover {
-    background-color: green;
+    background-color: #b1b1b1;
     color: black;
 }

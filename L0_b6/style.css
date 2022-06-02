@@ -1,54 +1,59 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 .main {
-    margin: 0 auto;
-    width: 80%;
-    height: 500px;
+    line-height: 1.5;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 48px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
 }
 
-.UI_Design,
-.Web_Development,
-.Branding,
-.Photography,
-.Apps_Development,
-.Digital_Marketing {
-    text-align: center;
+.main .box {
+    width: 350px;
+    height: 200px;
+    background-color: #F8F8F8;
     margin: 12px;
-    background-color: #b1b1b1;
-    height: 150px;
-    width: 300px;
+}
+
+.main .box .box__circle {
     position: relative;
-}
-
-.tron {
-    top: 5%;
-    right: 42%;
-    position: absolute;
-    border: 1px solid rgb(0, 255, 204);
-    border-radius: 50%;
-    width: 50px;
+    left: 50%;
+    transform: translateX(-50%);
     height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 2px solid #339999;
+    top: 10%;
 }
 
-i {
-    color: rgb(0, 221, 255);
-    margin-top: 24px;
-    z-index: 1;
+.main .box .box__circle i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: #339999;
+    transform: translate(-50%, -50%);
 }
 
-h3 {
+.main .box .box__title {
     margin-top: 32px;
+    text-align: center;
 }
 
-p {
-    margin-top: 12px;
-    margin: 4px;
-    opacity: 0.7;
+.main .box .box__title h4 {
+    font-size: 22px;
+    font-weight: initial;
+}
+
+.main .box .box__content p {
+    margin-top: 14px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: initial;
+    opacity: 0.6;
+    margin-left: 12px;
+    margin-right: 12px;
 }

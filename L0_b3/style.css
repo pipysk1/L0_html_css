@@ -4,9 +4,14 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: myFonts;
+    src: url(./asset/fonts/static/Kufam-SemiBold.ttf)
+}
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #b1b1b1;
+    font-family: myFonts;
+    background-color: #F2F2F2;
 }
 
 .main {
@@ -15,31 +20,33 @@ body {
 }
 
 .email {
+    margin-top: 32px;
     position: relative;
     border-radius: 50%;
     margin: 0 auto;
     height: 100px;
     width: 100px;
-    border: 3px solid aqua;
+    border: 3px solid #A2DBE0;
 }
 
 .ti-email {
     top: 32%;
     right: 32%;
-    color: aqua;
+    color: #A2DBE0;
     font-size: 32px;
     position: absolute;
 }
 
 .top {
-    margin-top: 32px;
-    font-size: 48px;
+    margin-top: 40px;
+    font-size: 32px;
 }
 
 .content {
-    margin-top: 22px;
-    font-size: 20px;
-    opacity: 0.6;
+    margin-top: 32px;
+    font-size: 16px;
+    opacity: 0.7;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .footer {
@@ -47,22 +54,27 @@ body {
 }
 
 .input-email {
-    border-radius: 12px;
-    border: 2px solid #555;
+    opacity: 0.8;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #FFF;
     width: 300px;
-    height: 46px;
+    height: 52px;
 }
 
 .btn-request {
-    width: 200px;
+    padding: 0 12px;
+    min-width: 150px;
     margin-top: 12px;
-    height: 46px;
+    height: 52px;
     color: white;
-    font-size: 16px;
+    font-weight: bold;
+    font-size: 14px;
     text-transform: uppercase;
-    border-radius: 12px;
-    border: 1px solid aqua;
-    background-color: aqua;
+    border-radius: 4px;
+    border: 1px solid rgb(1, 199, 199);
+    background-color: rgb(2, 169, 169);
 }
 
 .btn-request:hover {

@@ -11,39 +11,41 @@
 }
 
 .main-img {
-    height: 500px;
+    height: 400px;
     width: 100%;
+    background-color: #363636;
 }
 
 .content {
     position: absolute;
-    top: 40%;
+    top: 30%;
     text-align: center;
     left: 50%;
     margin-left: -250px;
 }
 
 .main-top {
-    font-size: 32px;
+    padding: auto;
+    font-size: 22px;
     color: white;
 }
 
 .main-content {
     font-style: inherit;
-    font-size: 16px;
-    margin-top: 24px;
+    font-size: 14px;
+    margin-top: 48px;
     color: white;
 }
 
 .btn-footer {
-    background-color: tomato;
-    border-radius: 8px;
-    border: 1px solid tomato;
+    background-color: #D94236;
+    border: 1px solid #D94236;
     margin-top: 24px;
     color: white;
-    height: 46px;
-    width: 250px;
-    box-shadow: 1px px 1px tomato;
+    border-radius: 2px;
+    height: 40px;
+    padding: 0 24px;
+    box-shadow: inset 0px 1px 2px 2px rgba(220, 118, 111, 0.5);
     z-index: 1;
     opacity: 1;
 }
