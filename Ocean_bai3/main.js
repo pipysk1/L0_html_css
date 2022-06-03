@@ -1,201 +1,68 @@
-function Validator(options) {
-    function getParent(element, selector) {
-        while (element.parentElement) {
-            if (element.parentElement.matches(selector)) {
-                return element.parentElement;
-            }
-            element = element.parentElement;
-        }
-    }
+const btnShowModalLogin = document.getElementById('btn-js-modal');
+const modal = document.querySelector('.js-modal');
+const modalClose = document.getElementById('js-modal-close');
+const modalContainer = document.getElementById('js-modal-container');
+const btnLogin = document.getElementById('btn-login');
+const btnForgetPassword = document.querySelector('.modal-forget-password');
+var username = document.getElementById('username');
+var password = document.getElementById('password');
+var passOld = 'admin';
 
-    var selectorRules = {};
+function showModal() {
+    modal.classList.add('open');
+}
 
-    // Hàm thực hiện validate
-    function validate(inputElement, rule) {
-        var errorElement = getParent(inputElement, options.formGroupSelector).querySelector(options.errorSelector);
-        var errorMessage;
+function hideModal() {
+    modal.classList.remove('open');
+}
+btnForgetPassword.addEventListener('click', function() {
+    alert("Đang phát triển")
+})
 
-        // Lấy ra các rules của selector
-        var rules = selectorRules[rule.selector];
+btnShowModalLogin.addEventListener('click', showModal);
+modalClose.addEventListener('click', hideModal);
+modalContainer.addEventListener('click', (event) => {
+    event.stopPropagation();
+})
+btnLogin.addEventListener('click', validator);
 
-        // Lặp qua từng rule & kiểm tra
-        // Nếu có lỗi thì dừng việc kiểm
-        for (var i = 0; i < rules.length; ++i) {
-            switch (inputElement.type) {
-                case 'radio':
-                case 'checkbox':
-                    errorMessage = rules[i](
-                        formElement.querySelector(rule.selector + ':checked')
-                    );
-                    break;
-                default:
-                    errorMessage = rules[i](inputElement.value);
-            }
-            if (errorMessage) break;
-        }
-
-        if (errorMessage) {
-            errorElement.innerText = errorMessage;
-            getParent(inputElement, options.formGroupSelector).classList.add('invalid');
-        } else {
-            errorElement.innerText = '';
-            getParent(inputElement, options.formGroupSelector).classList.remove('invalid');
-        }
-
-        return !errorMessage;
-    }
-
-    // Lấy element của form cần validate
-    var formElement = document.querySelector(options.form);
-    if (formElement) {
-        // Khi submit form
-        formElement.onsubmit = function(e) {
-            e.preventDefault();
-
-            var isFormValid = true;
-
-            // Lặp qua từng rules và validate
-            options.rules.forEach(function(rule) {
-                var inputElement = formElement.querySelector(rule.selector);
-                var isValid = validate(inputElement, rule);
-                if (!isValid) {
-                    isFormValid = false;
-                }
-            });
-
-            if (isFormValid) {
-                // Trường hợp submit với javascript
-                if (typeof options.onSubmit === 'function') {
-                    var enableInputs = formElement.querySelectorAll('[name]');
-                    var formValues = Array.from(enableInputs).reduce(function(values, input) {
-
-                        switch (input.type) {
-                            case 'radio':
-                                values[input.name] = formElement.querySelector('input[name="' + input.name + '"]:checked').value;
-                                break;
-                            case 'checkbox':
-                                if (!input.matches(':checked')) {
-                                    values[input.name] = '';
-                                    return values;
-                                }
-                                if (!Array.isArray(values[input.name])) {
-                                    values[input.name] = [];
-                                }
-                                values[input.name].push(input.value);
-                                break;
-                            case 'file':
-                                values[input.name] = input.files;
-                                break;
-                            default:
-                                values[input.name] = input.value;
-                        }
-
-                        return values;
-                    }, {});
-                    options.onSubmit(formValues);
-                }
-                // Trường hợp submit với hành vi mặc định
-                else {
-                    formElement.submit();
-                }
-            }
-        }
-
-        // Lặp qua mỗi rule và xử lý (lắng nghe sự kiện blur, input, ...)
-        options.rules.forEach(function(rule) {
-
-            // Lưu lại các rules cho mỗi input
-            if (Array.isArray(selectorRules[rule.selector])) {
-                selectorRules[rule.selector].push(rule.test);
+function validator() {
+    if (username && password) {
+        username.onblur = function() {
+            if (username.value.trim().length == 0) {
+                document.querySelector('.message-username').innerHTML = "Vui lòng nhập tài khoản";
+                username.parentElement.classList.add('invalid')
             } else {
-                selectorRules[rule.selector] = [rule.test];
+                document.querySelector('.message-username').innerHTML = "";
+                username.parentElement.classList.remove('invalid')
             }
-
-            var inputElements = formElement.querySelectorAll(rule.selector);
-
-            Array.from(inputElements).forEach(function(inputElement) {
-                // Xử lý trường hợp blur khỏi input
-                inputElement.onblur = function() {
-                    validate(inputElement, rule);
-                }
-
-                // Xử lý mỗi khi người dùng nhập vào input
-                inputElement.oninput = function() {
-                    var errorElement = getParent(inputElement, options.formGroupSelector).querySelector(options.errorSelector);
-                    errorElement.innerText = '';
-                    getParent(inputElement, options.formGroupSelector).classList.remove('invalid');
-                }
-            });
-        });
-    }
-
-}
-
-
-
-// Định nghĩa rules
-// Nguyên tắc của các rules:
-// 1. Khi có lỗi => Trả ra message lỗi
-// 2. Khi hợp lệ => Không trả ra cái gì cả (undefined)
-Validator.isUsername = function(selector, message) {
-    return {
-        selector: selector,
-        test: function(value) {
-            return value ? undefined : message || 'Vui lòng nhập trường này'
         }
-    };
-}
-
-Validator.isPassword = function(selector, message) {
-    return {
-        selector: selector,
-        test: function(value) {
-            return value ? undefined : message || 'Vui lòng nhập mật khẩu'
+        password.onblur = function() {
+            if (password.value.trim().length == 0) {
+                document.querySelector('.message-password').innerHTML = "Vui lòng nhập mật khẩu";
+                password.parentElement.classList.add('invalid')
+            } else {
+                document.querySelector('.message-password').innerHTML = "";
+                password.parentElement.classList.remove('invalid')
+            }
+        }
+    }
+    btnLogin.onclick = function() {
+        if (username.value !== "admin" && username.value != null) {
+            document.querySelector('.message-username').innerHTML = "Sai tài khoản";
+        }
+        if (password.value !== passOld && password.value != null) {
+            document.querySelector('.message-password').innerHTML = "Sai mật khẩu";
+        } else {
+            document.querySelector('.form-message').innerHTML = "";
+        }
+        if (true) {
+            btnLogin.innerHTML = "Loading..."
+            setTimeout(function() {
+                hideModal();
+                btnShowModalLogin.innerHTML = "Đăng nhập thành công"
+            }, 3000)
         }
     }
 }
-
-Validator.minLength = function(selector, min, message) {
-    return {
-        selector: selector,
-        test: function(value) {
-            return value.length >= min ? undefined : message || `Vui lòng nhập tối thiểu ${min} kí tự`;
-        }
-    };
-}
-
-Validator.isConfirmed = function(selector, getConfirmValue, message) {
-    return {
-        selector: selector,
-        test: function(value) {
-            return value === getConfirmValue() ? undefined : message || 'Giá trị nhập vào không chính xác';
-        }
-    }
-}
-
-var user = "admin";
-var pass = "admin";
-var btnTicket = document.querySelector('.js-buy-ticket');
-
-function handleLogin() {
-    var username = document.querySelector('input[name="username"]').value;
-    var password = document.querySelector('input[name="password"]').value;
-    var btnLoading = document.getElementsByClassName('btn-loading');
-
-    if (user == username && password == pass) {
-
-
-    } else {
-        alert('Sai tài khoản hoặc mật khẩu');
-    }
-
-}
-
-var btnService = document.querySelectorAll('.js-buy-ticket');
-
-function showLogin() {
-    btnService.onclick = function() {
-        alert('mo modal')
-    }
-}
-showLogin();
+validator();
