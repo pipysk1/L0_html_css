@@ -7,74 +7,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hệ thống</title>
     <link rel="stylesheet" href="style.css">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="main.css">
-
-
 </head>
 
 <body>
-    <div id="main">
-        <div class="login_service">
-            <button id="btn-js-modal" class="btn js-buy-ticket">Đăng nhập hệ thống</button>
-        </div>
+<div id="main">
+    <div class="login_service">
+        <button id="btn-js-modal" class="btn js-buy-ticket">Đăng nhập hệ thống</button>
     </div>
-    <!-- Modal Login -->
-    <div class="modal js-modal">
-        <div id="js-modal-container" class="model-container js-modal-container">
-            <div id="js-modal-close" class="modal-close js-modal-close">
-                <i class="fa-solid fa-xmark"></i>
-            </div>
-            <header class="modal-header"> Đăng nhập hệ thống </header>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="username" class="form-label">Tài khoản</label>
-                    <input id="username" name="username" type="username" placeholder="Nhập tài khoản" class="form-control">
-                    <span class="form-message message-username"></span>
-                </div>
-                <div class="form-group">
-                    <label for="password" class="form-label">Mật khẩu</label>
-                    <input id="password" name="password" type="password" placeholder="Nhập mật khẩu" class="form-control">
-                    <span class="form-message message-password"></span>
-                </div>
-                <button id="btn-login">Đăng nhập</button>
-            </div>
-            <footer class="modal-footer">
-                <p id="submit-change-password" class="modal-forget-password">Forget Password?</p>
-            </footer>
+</div>
+<!-- Modal Login -->
+<div class="modal js-modal">
+    <div id="js-modal-container" class="model-container js-modal-container">
+        <div id="js-modal-close" class="modal-close js-modal-close">
+            <i class="fa-solid fa-xmark"></i>
         </div>
-    </div>
-    <!-- Modal Change Password -->
-    <div class="modal js-modal-change-pass">
-        <div id="js-modal-container" class="model-container js-modal-container">
-            <div id="js-modal-close-password" class="modal-close js-modal-close">
-                <i class="fa-solid fa-xmark"></i>
+        <header class="modal-header"> Đăng nhập hệ thống</header>
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="username" class="form-label">Tài khoản</label>
+                <input id="username" name="username" type="text" placeholder="Nhập tài khoản" class="form-control">
+                <span class="form-message message-username"></span>
             </div>
-            <header class="modal-header"> Change Password </header>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label for="password-old" class="form-label">Mật khẩu cũ</label>
-                    <input id="password-old" name="password-old" type="password" placeholder="Nhập mật khẩu cũ" class="form-control">
-                    <span class="form-message message-password-old"></span>
-                </div>
-                <div class="form-group">
-                    <label for="password-new" class="form-label">Mật khẩu Mới</label>
-                    <input id="password-new" name="password-new" type="password-new" placeholder="Nhập mật khẩu" class="form-control">
-                    <span class="form-message message-password-new"></span>
-                </div>
-                <div class="form-group">
-                    <label for="re-password-new" class="form-label">Nhập lại mật khẩu mới</label>
-                    <input id="re-password-new" name="re-password-new" type="re-password-new" placeholder="Nhập mật khẩu" class="form-control">
-                    <span class="form-message message-re-password-new"></span>
-                </div>
-                <button id="btn-change-password">Đổi mật khẩu</button>
+            <div class="form-group">
+                <label for="password" class="form-label">Mật khẩu</label>
+                <input id="password" name="password" type="password" placeholder="Nhập mật khẩu" class="form-control">
+                <span class="form-message message-password"></span>
             </div>
-            
+            <button id="btn-login">Đăng nhập</button>
         </div>
+        <footer class="modal-footer">
+            <p id="submit-change-password" class="modal-forget-password">Forget Password?</p>
+        </footer>
     </div>
-    <script src="main.js"></script>
-    
+</div>
+<!-- Modal Change Password -->
+<div class="modal js-modal-change-pass">
+    <div id="js-modal-container-password" class="model-container js-modal-container">
+        <div id="js-modal-close-password" class="modal-close js-modal-close">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <header class="modal-header"> Change Password</header>
+        <div class="modal-body">
+            <div class="form-group">
+                <label for="password-old" class="form-label">Mật khẩu cũ</label>
+                <input id="password-old" name="password-old" type="password" placeholder="Nhập mật khẩu cũ"
+                       class="form-control">
+                <span class="form-message message-password-old"></span>
+            </div>
+            <div class="form-group">
+                <label for="password-new" class="form-label">Mật khẩu Mới</label>
+                <input id="password-new" name="password-new" type="password" placeholder="Nhập mật khẩu"
+                       class="form-control">
+                <span class="form-message message-password-new"></span>
+            </div>
+            <div class="form-group">
+                <label for="re-password-new" class="form-label">Nhập lại mật khẩu mới</label>
+                <input id="re-password-new" name="re-password-new" type="password" placeholder="Nhập mật khẩu"
+                       class="form-control">
+                <span class="form-message message-re-password-new"></span>
+            </div>
+            <button id="btn-change-password">Đổi mật khẩu</button>
+        </div>
+
+    </div>
+</div>
+<script src="main.js"></script>
+
 </body>
 
 </html>

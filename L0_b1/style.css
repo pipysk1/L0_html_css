@@ -74,17 +74,22 @@ b {
 
 /* Mobile */
 
-@media only screen and (max-width:46.1875em) {
+@media only screen and (max-width: 46.1875em) {
     .footer {
         flex-direction: column;
     }
+
     .btn-footer {
         width: 50%;
     }
+
     b {
         color: green;
     }
-    .content_header {}
+
+    .content_header {
+    }
+
     .header {
         background-color: green;
         color: #666;
@@ -94,7 +99,7 @@ b {
 
 /* Tablet */
 
-@media only screen and (min-width:46.25em) and (max-width:63.9375em) {
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
     p {
         color: red;
     }
@@ -103,4 +108,5 @@ b {
 
 /* PC */
 
-@media only screen and (min-width:64em) {}
+@media only screen and (min-width: 64em) {
+}

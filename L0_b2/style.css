@@ -65,7 +65,7 @@ html {
 
 /* Mobile */
 
-@media only screen and (max-width:46.1875em) {
+@media only screen and (max-width: 46.1875em) {
     .btn-footer {
         background-color: green;
         border: 1px solid green;
@@ -76,7 +76,7 @@ html {
 
 /* Tablet */
 
-@media only screen and (min-width:46.25em) and (max-width:63.9375em) {
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
     .btn-footer {
         background-color: red;
         border: 1px solid red;
@@ -87,4 +87,5 @@ html {
 
 /* PC */
 
-@media only screen and (min-width:64em) {}
+@media only screen and (min-width: 64em) {
+}

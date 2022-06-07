@@ -64,7 +64,7 @@ h3 {
 }
 
 .div-button {
-    margin: 0px 24px 0px 24px;
+    margin: 0 24px;
     display: flex;
     justify-content: space-between;
 }

@@ -5,7 +5,7 @@
 }
 
 .main {
-    margin: 32px 250px 0px 250px;
+    margin: 32px 250px 0 250px;
     position: relative;
     font-family: Helvetica, sans-serif;
 }
@@ -53,7 +53,7 @@
 
 @media only screen and (max-width:739px) {
     .main {
-        margin: 32px 50px 0px 50px;
+        margin: 32px 50px 0 50px;
     }
     .main .main__content--item .item {
         display: flex;
@@ -63,6 +63,6 @@
 
 @media only screen and (min-width:740px) and (max-width:1023px) {
     .main {
-        margin: 32px 100px 0px 100px;
+        margin: 32px 100px 0 100px;
     }
 }
