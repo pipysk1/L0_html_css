@@ -56,9 +56,9 @@ html {
     width: 80px;
     height: 80px;
     display: flex;
-    float: left;
     margin-right: 12px;
     background-color: #83efa6;
+    float: left;
 }
 
 .main__content--circle h3 {
