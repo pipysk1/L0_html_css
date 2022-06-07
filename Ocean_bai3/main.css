@@ -394,6 +394,7 @@ html {
     display: flex;
 }
 
+
 .model-container {
     background-color: #fff;
     width: 650px;
@@ -448,8 +449,10 @@ input.modal-input {
 #btn-login:hover {
     opacity: 0.9;
 }
-
-#btn-login {
+#btn-change-password:hover{
+    opacity: 0.8;
+}
+#btn-login,#btn-change-password {
     background-color: #009688;
     width: 100%;
     color: #FFF;
