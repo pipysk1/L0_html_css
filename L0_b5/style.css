@@ -1,55 +1,68 @@
-    * {
-        padding: 0;
-        box-sizing: border-box;
-        margin: 0;
-    }
-    
+* {
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.main {
+    margin: 32px 250px 0px 250px;
+    position: relative;
+    font-family: Helvetica, sans-serif;
+}
+
+.main .main__title h3 {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.main .main__content {}
+
+.main .main__content--text p {
+    opacity: 0.6;
+    margin-top: 12px;
+    font-size: 16px;
+    text-align: justify;
+}
+
+.main .main__content--item {
+    display: flex;
+    margin-top: 32px;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    justify-content: space-around;
+}
+
+.main .main__content--item .item {
+    display: flex;
+    margin-bottom: 12px;
+    width: 33%;
+}
+
+.main .main__content--item .item i {
+    color: #C2D82E;
+    font-weight: bold;
+    margin-right: 12px;
+    font-size: 16px;
+}
+
+.main .main__content--item .item p {
+    font-size: 16px;
+    opacity: 0.6;
+}
+
+@media only screen and (max-width:739px) {
     .main {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 650px;
-        margin: 18px;
-        font-family: Helvetica, sans-serif;
+        margin: 32px 50px 0px 50px;
     }
-    
-    .main .main__title h3 {
-        font-size: 28px;
-        font-weight: 500;
-        margin-bottom: 16px;
-    }
-    
-    .main .main__content {}
-    
-    .main .main__content--text p {
-        opacity: 0.6;
-        margin-top: 12px;
-        font-size: 16px;
-        text-align: justify;
-    }
-    
-    .main .main__content--item {
-        display: flex;
-        margin-top: 32px;
-        flex-wrap: wrap;
-        box-sizing: border-box;
-        justify-content: space-around;
-    }
-    
     .main .main__content--item .item {
         display: flex;
-        margin-bottom: 12px;
-        width: 33%;
+        width: 50%;
     }
-    
-    .main .main__content--item .item i {
-        color: #C2D82E;
-        font-weight: bold;
-        margin-right: 12px;
-        font-size: 16px;
+}
+
+@media only screen and (min-width:740px) and (max-width:1023px) {
+    .main {
+        margin: 32px 100px 0px 100px;
     }
-    
-    .main .main__content--item .item p {
-        font-size: 16px;
-        opacity: 0.6;
-    }
+}

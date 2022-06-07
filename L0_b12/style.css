@@ -95,3 +95,38 @@ p {
 h3 {
     font-weight: initial;
 }
+
+@media only screen and (max-width:739px) {
+    .main {
+        width: 100%;
+    }
+    .header {
+        flex-direction: column;
+        width: 100%;
+    }
+    .contact-info {
+        width: 50%;
+        margin: 0 auto;
+    }
+    .contact-input {
+        width: 50%;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width:740px) and (max-width:1023px) {
+    .main {
+        width: 100%;
+    }
+    .header {
+        margin: 12px auto;
+        width: 80%;
+        justify-content: space-between;
+    }
+    .contact-info {
+        width: 30%;
+    }
+    .contact-input {
+        width: 50%;
+    }
+}

@@ -6,6 +6,8 @@
 .main {
     text-align: center;
     font-family: Helvetica, sans-serif;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .main__title h1 {
@@ -42,3 +44,14 @@
     margin-left: 50px;
     margin-right: 50px;
 }
+
+@media only screen and (max-width:739px) {
+    .main__box {
+        flex-direction: column;
+    }
+    .main__box--1 {
+        width: auto;
+    }
+}
+
+@media only screen and(min-width:740px) and(max-width:1023px) {}

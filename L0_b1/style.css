@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    line-height: 1.6;
+}
+
 .main {
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 100px;
@@ -66,3 +70,37 @@ b {
     background-color: #b1b1b1;
     color: black;
 }
+
+
+/* Mobile */
+
+@media only screen and (max-width:46.1875em) {
+    .footer {
+        flex-direction: column;
+    }
+    .btn-footer {
+        width: 50%;
+    }
+    b {
+        color: green;
+    }
+    .content_header {}
+    .header {
+        background-color: green;
+        color: #666;
+    }
+}
+
+
+/* Tablet */
+
+@media only screen and (min-width:46.25em) and (max-width:63.9375em) {
+    p {
+        color: red;
+    }
+}
+
+
+/* PC */
+
+@media only screen and (min-width:64em) {}

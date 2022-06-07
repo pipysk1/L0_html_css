@@ -6,9 +6,7 @@
 
 .main {
     font-family: Arial, Helvetica, sans-serif;
-    margin: 0 auto;
-    width: 850px;
-    margin-top: 12px;
+    margin: 12px 320px 24px 320px;
 }
 
 .title {
@@ -48,4 +46,16 @@ p {
 .content-name {
     display: flex;
     justify-content: space-between;
+}
+
+@media only screen and (max-width:739px) {
+    .main {
+        margin: 12px 50px 12px 50px;
+    }
+}
+
+@media only screen and (min-width:740px) and (max-width:1023px) {
+    .main {
+        margin: 12px 100px 24px 100px;
+    }
 }
