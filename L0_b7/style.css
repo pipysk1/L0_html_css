@@ -1,79 +1,109 @@
 * {
-    margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    margin: 0;
+}
+
+html {
+    font-family: Helvetica, sans-serif;
 }
 
 .main {
-    font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
-}
-
-.main__1 {
-    border-bottom: 1px solid #ccc;
-    margin-left: 12px;
-    margin-right: 12px;
-    width: 100%;
-    max-height: 350px;
-    display: flex;
-}
-
-.content {
-    width: 50%;
-}
-
-.content-img {
     text-align: center;
-    margin: 0 auto;
-}
-
-.img {
-    margin: 0 auto;
-    width: 100%;
-    max-height: 350px;
-}
-
-.main__2 {
-    padding-top: 62px;
-    margin-left: 12px;
-    margin-right: 12px;
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-}
-
-h3 {
-    margin-top: 12px;
-    font-size: 32px;
-    font-weight: 100;
     opacity: 0.8;
 }
 
-p {
-    margin-top: 48px;
-    opacity: 0.4;
-    font-size: 18px;
+.content,
+.content-1 {
+    margin: 12px 24px;
 }
 
-.button {
+.content {
+    margin-bottom: 5%;
+}
+
+.content-1 {
+    margin-top: 5%;
+}
+
+.chia {
+    border-bottom: 1px solid red;
+}
+
+.main__title {}
+
+.main__title h1 {
+    text-align: justify;
+    font-weight: 100;
+}
+
+.main__content--box {
+    float: left;
+    width: 50%;
+}
+
+.main__content--box-1 {
+    float: right;
+    width: 50%;
+}
+
+.main__content {
     margin-top: 24px;
-    height: 46px;
-    border-radius: 8px;
-    color: beige;
-    width: 250px;
-    font-weight: bold;
+}
+
+.main__content p {
+    text-align: justify;
+    font-weight: 100;
+}
+
+.main__button {
+    margin-top: 24px;
+    text-align: justify;
+}
+
+.btn__custom {
+    padding: 0 16px;
+    height: 48px;
+    border-radius: 28px;
+    background-color: #75b6e5;
+    border: 1px solid #75b6e5;
     text-transform: uppercase;
-    background-color: aqua;
-    border: 1px solid aqua;
-    opacity: 0.6;
+    font-weight: bold;
+    color: #FFF;
 }
 
-.btn2 {
-    background-color: green;
-    border: 1px solid green;
+.btn__custom:hover,
+.btn__custom-1:hover {
+    opacity: 0.8;
+    cursor: pointer;
 }
 
-button:hover {
-    opacity: 1;
+.btn__custom-1 {
+    padding: 0 16px;
+    height: 48px;
+    border-radius: 28px;
+    background-color: #85e575;
+    border: 1px solid #85e575;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #FFF;
+}
+
+.main__img {
+    float: right;
+    width: 50%;
+}
+
+.main__img--img {
+    width: 50%;
+}
+
+.main__img-1 {
+    float: left;
+    width: 50%;
+}
+
+.main__img--img-1 {
+    width: 50%;
 }
